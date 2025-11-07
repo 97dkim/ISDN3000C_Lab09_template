@@ -37,6 +37,8 @@ If you removed the line, the full pagr would reload and forms submits the old wa
 
 **Answer:**
 
+--host=0.0.0.0 is necessary so the Flask app is accessible from outside the Docker container.
+Without it, Flask binds only to 127.0.0.1, which is inaccessible from your host machine e.g. browser on Windows.
 
 
 
@@ -45,5 +47,5 @@ If you removed the line, the full pagr would reload and forms submits the old wa
 
 **Answer:**
 
-
+Nginx knows the IP of flask-app because Docker Compose automatically sets up a private network and provides DNS name resolution.
 
